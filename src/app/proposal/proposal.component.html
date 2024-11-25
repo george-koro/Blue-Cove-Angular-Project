@@ -1,0 +1,216 @@
+<section class="proposal section-space-small-top section-space-bot">
+  <div class="container-b">
+    <div class="proposal__container">
+      <div class="proposal__image">
+        <img src="./assets/images/life-travel.svg" alt="" />
+      </div>
+      <h1 class="proposal__title">TRIP TO GREECE</h1>
+      <div class="proposal__proposal">Proposal: ----</div>
+      <div class="proposal__passengers">Passenger names</div>
+      <ul class="proposal__passengers-list">
+        <li>Mrs Lindsey Marie Lien</li>
+        <li>Mr Austin James Wagner</li>
+      </ul>
+      <div class="proposal__information">
+        <div class="proposal__information-item">
+          <div class="proposal__information-item-title">Reference number</div>
+          <div class="proposal__information-item-border"></div>
+          <div class="proposal__information-item-text">LOFI104189</div>
+        </div>
+        <div class="proposal__information-item">
+          <div class="proposal__information-item-title">Dates</div>
+          <div class="proposal__information-item-border"></div>
+          <div class="proposal__information-item-text">
+            02 June to 21 June 2023
+          </div>
+        </div>
+        <div class="proposal__information-item">
+          <div class="proposal__information-item-title">Prepared for</div>
+          <div class="proposal__information-item-border"></div>
+          <div class="proposal__information-item-text">
+            Life of Travel Company
+          </div>
+        </div>
+        <div class="proposal__information-item">
+          <div class="proposal__information-item-title">Number of guests</div>
+          <div class="proposal__information-item-border"></div>
+          <div class="proposal__information-item-text">6</div>
+        </div>
+        <div class="proposal__information-item">
+          <div class="proposal__information-item-title">Remarks</div>
+          <div class="proposal__information-item-border"></div>
+          <div class="proposal__information-item-text">Honeymoon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="proposal__image-2">
+    <img src="./assets/images/image1.png" alt="" />
+  </div>
+  <div class="container-a">
+    <div class="proposal__box">
+      <div class="proposal__box-item">
+        <div class="proposal__box-item-title">Accomodations</div>
+        <div class="proposal__box-item-container js-map-container">
+          <div class="proposal__box-item-map">
+            <div class="js-map-holder">
+              <google-map
+                height="100%"
+                width="100%"
+                [center]="center"
+                [zoom]="zoom"
+              >
+                <map-marker
+                  *ngFor="let position of markerPositions1"
+                  [position]="position"
+                  [title]="position.title"
+                ></map-marker>
+              </google-map>
+            </div>
+          </div>
+          <ul class="proposal__box-item-list">
+            <li
+              class="js-map-item"
+              data-title="Electra Palace"
+              data-lat="37.87700365758791"
+              data-long="23.752057745481792"
+            >
+              <div class="proposal__box-item-date">
+                03 June to 05 June - Thessaloniki
+              </div>
+              <div class="proposal__box-item-text">Electra Palace</div>
+            </li>
+            <li
+              class="js-map-item"
+              data-title="Doupiani House"
+              data-lat="37.770036575879"
+              data-long="23.75205774548179"
+            >
+              <div class="proposal__box-item-date">
+                05 June to 07 June - Meteora
+              </div>
+              <div class="proposal__box-item-text">Doupiani House</div>
+            </li>
+            <li
+              class="js-map-item"
+              data-title="Doupiani House 2"
+              data-lat="37.8770036575791"
+              data-long="23.205774481792"
+            >
+              <div class="proposal__box-item-date">
+                07 June to 11 June - Athens
+              </div>
+              <div class="proposal__box-item-text">Hotel Bretagne</div>
+            </li>
+            <li
+              class="js-map-item"
+              data-title="Doupiani House 3"
+              data-lat="35.8758791"
+              data-long="23.75205774548172"
+            >
+              <div class="proposal__box-item-date">
+                11 June to 15 June - Sifnos
+              </div>
+              <div class="proposal__box-item-text">Elies Resort</div>
+            </li>
+            <li
+              class="js-map-item"
+              data-title="Doupiani House 4"
+              data-lat="37.8700365758791"
+              data-long="21.72057745481792"
+            >
+              <div class="proposal__box-item-date">
+                15 June to 18 June - Santorini
+              </div>
+              <div class="proposal__box-item-text">Andronis Arcadia</div>
+            </li>
+            <li
+              class="js-map-item"
+              data-title="Doupiani House 5"
+              data-lat="38.9770036558791"
+              data-long="23.52057745481792"
+            >
+              <div class="proposal__box-item-date">
+                18 June to 21 June - Crete
+              </div>
+              <div class="proposal__box-item-text">Elounda Peninsula</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="proposal__box-item">
+        <div class="proposal__box-item-title">Highlights</div>
+        <div class="proposal__box-item-container js-map-container">
+          <div class="proposal__box-item-map">
+            <div class="js-map-holder">
+              <google-map
+                height="100%"
+                width="100%"
+                [center]="center"
+                [zoom]="zoom"
+              >
+                <map-marker
+                  *ngFor="let position of markerPositions2"
+                  [position]="position"
+                  [title]="position.title"
+                ></map-marker>
+              </google-map>
+            </div>
+          </div>
+          <ul class="proposal__box-item-list">
+            <li
+              class="js-map-item"
+              data-title="Doupiani House"
+              data-lat="37.87700365758791"
+              data-long="23.752057745481792"
+            >
+              <div class="proposal__box-item-date">03 June to 05 June</div>
+              <div class="proposal__box-item-text">
+                <span>Thessaloniki </span>- Electra Palace
+              </div>
+            </li>
+            <li
+              class="js-map-item"
+              data-title="Doupiani House 2"
+              data-lat="37.8700365758791"
+              data-long="24.72057745481792"
+            >
+              <div class="proposal__box-item-date">03 June to 05 June</div>
+              <div class="proposal__box-item-text">
+                <span>Thessaloniki </span>- Electra Palace
+              </div>
+            </li>
+            <li>
+              <div class="proposal__box-item-date">03 June to 05 June</div>
+              <div class="proposal__box-item-text">
+                <span>Thessaloniki </span>- Electra Palace
+              </div>
+            </li>
+            <li>
+              <div class="proposal__box-item-date">03 June to 05 June</div>
+              <div class="proposal__box-item-text">
+                <span>Thessaloniki </span>- Electra Palace
+              </div>
+            </li>
+            <li>
+              <div class="proposal__box-item-date">03 June to 05 June</div>
+              <div class="proposal__box-item-text">
+                <span>Thessaloniki </span>- Electra Palace
+              </div>
+            </li>
+            <li>
+              <div class="proposal__box-item-date">03 June to 05 June</div>
+              <div class="proposal__box-item-text">
+                <ul>
+                  <li>Flight - Aegean Airlines - Milos to Athens</li>
+                  <li>Highlights of Athens, Full Day</li>
+                  <li>Guided Tour - Walking</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

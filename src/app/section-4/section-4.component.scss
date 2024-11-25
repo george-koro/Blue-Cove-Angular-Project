@@ -1,0 +1,282 @@
+@import "../../styles.scss";
+
+.travel {
+  &__title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    width: 100%;
+    min-height: 330px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(even) {
+      background-color: #ededed;
+    }
+
+    &-title {
+      width: 470px;
+      @include font-size-40;
+      @include font-weight-light;
+      padding: 125px 0;
+      text-align: right;
+      opacity: 0.7;
+      padding-right: 100px;
+      flex-shrink: 0;
+    }
+
+    &-box {
+      width: 100%;
+      padding-left: 100px;
+      padding-right: 20px;
+    }
+
+    &-text {
+      b {
+        display: block;
+        margin-bottom: 30px;
+      }
+
+      ul {
+        padding-left: 30px;
+
+        li {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &-note {
+      margin-top: 20px;
+      @include font-size-17;
+    }
+
+    &-border {
+      width: 1px;
+      height: 280px;
+      border-right: 2px solid $dark;
+      opacity: 0.1;
+    }
+  }
+
+  @include when-less("xxl") {
+    &__item-title {
+      width: 380px;
+      padding-right: 50px;
+    }
+  }
+
+  @include when-less("lg") {
+    &__title {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      flex-direction: column;
+      min-height: unset;
+      padding-left: 60px;
+      padding-right: 60px;
+
+      &-title {
+        text-align: left;
+        width: 100%;
+        padding: 0;
+        padding: 30px 0;
+      }
+
+      &-border {
+        width: 100%;
+        height: 2px;
+        border-right: 0;
+        border-bottom: 2px solid $dark;
+        opacity: 0.1;
+      }
+
+      &-box {
+        padding: 30px 0px;
+      }
+    }
+  }
+
+  @include when-less("md") {
+    &__item {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+}
+
+.hotels-2 {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-transform: none;
+  }
+
+  &__swiper {
+    width: 100%;
+
+    overflow: hidden;
+    // padding-left: 30px;
+    margin-bottom: 50px;
+
+    position: relative;
+
+    .swiper {
+      cursor: grab;
+      overflow: hidden;
+
+      //   padding-right: 100px;
+      &-container {
+        width: 100%;
+      }
+
+      &-wrapper {
+        width: 100%;
+        // overflow: hidden;
+      }
+
+      &-slide {
+
+        // width: 1260px;
+        // height: 580px;
+        // position: relative;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    .swiper-button-disabled {
+      opacity: 0;
+    }
+
+    img {
+      position: absolute;
+      z-index: 999;
+      top: 50%;
+      transform: translateY(-25%);
+      cursor: pointer;
+
+      &.swiper-button-next {
+        right: 10%;
+      }
+
+      &.swiper-button-prev {
+        left: 50px;
+      }
+    }
+  }
+
+  &__information {
+    justify-content: center;
+
+    &-list {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    li {
+      min-width: calc(100% / 4);
+      padding-right: 20px;
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-title {
+      @include font-weight-semibold;
+      color: $dark-2;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      a {
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: 30px;
+
+        li {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  @include when-less("lg") {
+    &__title {
+      // margin: 40px 0 20px;
+    }
+  }
+
+  @include when-less("md") {
+    &__information {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      &-list {
+        flex-direction: column;
+
+        li {
+          margin-bottom: 20px;
+          padding-right: 0;
+        }
+      }
+    }
+
+    .container-a.no-padding-right {
+      padding-left: 0;
+    }
+
+    .swiper-slide {
+      img {
+        object-fit: cover;
+        height: 440px;
+      }
+    }
+
+    &__buttons {
+      img {
+        width: 15px;
+        height: 40px;
+
+        &.swiper-button-next {
+          right: 5%;
+        }
+
+        &.swiper-button-prev {
+          left: 20px;
+        }
+      }
+    }
+  }
+}

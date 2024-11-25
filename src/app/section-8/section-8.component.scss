@@ -1,0 +1,203 @@
+@import "../../styles.scss";
+
+.cruises-1 {
+  &__title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__container-inner {
+    padding-top: 80px;
+    display: flex;
+  }
+
+  &__left {
+    width: 100%;
+    max-width: 770px;
+    margin-right: 100px;
+
+    ul {
+      margin-top: 40px;
+      padding-left: 30px;
+
+      li {
+        @include font-weight-medium;
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-title {
+      text-transform: none;
+      margin-bottom: 60px;
+    }
+
+    &-note {
+      max-width: 670px;
+      margin-top: 40px;
+    }
+  }
+
+  &__paragraph-container {
+    width: 100%;
+    max-width: 670px;
+  }
+
+  &__right {
+    flex-shrink: 2;
+
+    &-title {
+      @include font-weight-semibold;
+      color: $dark-2;
+      margin-bottom: 5px;
+    }
+
+    &-text {
+      margin-bottom: 60px;
+    }
+  }
+
+  &-image {
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__right-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    margin-top: 40px;
+    padding-bottom: 70px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &-title {
+      @include font-weight-semibold;
+      color: $dark-2;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      ul {
+        padding-left: 30px;
+
+        li {
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &-note {
+      margin-top: 25px;
+    }
+  }
+
+  @include when-less("xl") {
+    &__title {
+      // margin-bottom: 60px;
+    }
+
+    &__container {
+      .container-a {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &__container-inner {
+      padding-top: 40px;
+      flex-direction: column;
+    }
+
+    .container-a.no-padding-right {
+      padding-left: 0;
+    }
+
+    &__left {
+      margin-bottom: 50px;
+      padding-left: 60px;
+      padding-right: 60px;
+      max-width: unset;
+
+      &-title {
+        margin-bottom: 30px;
+      }
+
+      &-note {
+        max-width: unset;
+      }
+    }
+
+    &__paragraph-container {
+      max-width: unset;
+    }
+
+    &__right {
+      &-image {
+        img {
+          width: 100%;
+        }
+      }
+
+      &-title,
+      &-text,
+      &-container {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+    }
+  }
+
+  @include when-less("md") {
+    &__image {
+      img {
+        object-fit: cover;
+        height: 360px;
+      }
+    }
+
+    &__right {
+      &-image {
+        img {
+          object-fit: cover;
+          height: 260px;
+        }
+      }
+    }
+
+    &__right-container,
+    &__left {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    &__right {
+
+      &-title,
+      &-text {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+  }
+}

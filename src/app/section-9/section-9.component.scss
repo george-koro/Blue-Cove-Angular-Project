@@ -1,0 +1,256 @@
+@import "../../styles.scss";
+
+.cruises-2 {
+  &__title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__image {
+    width: 50%;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__left+&__image {
+    margin-top: 150px;
+  }
+
+  &__left {
+    width: 50%;
+    max-width: 50%;
+    flex-shrink: 2;
+    margin-right: 20px;
+
+    ul {
+      margin-top: 40px;
+      padding-left: 30px;
+
+      li {
+        @include font-weight-medium;
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-title {
+      text-transform: none;
+      margin-bottom: 60px;
+    }
+
+    &-note {
+      max-width: 670px;
+      margin-top: 40px;
+    }
+  }
+
+  &__paragraph-container {
+    width: 100%;
+    max-width: 670px;
+  }
+
+  &__right {
+    width: 50%;
+    flex-shrink: 2;
+    margin-left: 100px;
+    margin-bottom: 150px;
+
+    &-title {
+      @include font-weight-semibold;
+      color: $dark-2;
+      margin-bottom: 5px;
+    }
+
+    &-text {
+      margin-bottom: 60px;
+    }
+  }
+
+  &-image {
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__right-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    margin-top: 40px;
+    padding-bottom: 70px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &-title {
+      @include font-weight-semibold;
+      color: $dark-2;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      ul {
+        padding-left: 30px;
+
+        li {
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &-note {
+      margin-top: 25px;
+    }
+  }
+
+  @include when-less("xxl") {
+    &__image {
+      flex-shrink: 0;
+    }
+
+    &__right {
+      margin-left: 40px;
+      flex-shrink: 3;
+    }
+  }
+
+  @include when-less("xxl") {
+    &__title {
+      // margin-bottom: 60px;
+    }
+
+    & .container-a {
+
+      &.no-padding-right,
+      &.no-padding-left {
+        padding: 0;
+      }
+    }
+
+    &__container {
+      flex-direction: column;
+
+      &.reverse {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &__image {
+      width: 100%;
+
+      img {
+        height: 70vh;
+      }
+
+      margin-bottom: 50px;
+    }
+
+    &__left+&__image {
+      margin-top: 0px;
+    }
+
+    &__container-inner {
+      padding-top: 40px;
+      flex-direction: column;
+    }
+
+    .container-a.no-padding-right {
+      padding-left: 0;
+    }
+
+    &__left {
+      width: 100%;
+      margin-bottom: 50px;
+      padding-left: 60px;
+      padding-right: 60px;
+      max-width: unset;
+
+      &-title {
+        margin-bottom: 30px;
+      }
+
+      &-note {
+        max-width: unset;
+      }
+    }
+
+    &__paragraph-container {
+      max-width: unset;
+    }
+
+    &__right {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 50px;
+
+      &-image {
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 70vh;
+        }
+      }
+
+      &-text {
+        margin-bottom: 30px;
+      }
+
+      &-title,
+      &-text,
+      &-container {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+    }
+  }
+
+  @include when-less("md") {
+    &__image {
+      img {
+        object-fit: cover;
+        height: 360px;
+      }
+    }
+
+    &__right {
+      &-image {
+        img {
+          object-fit: cover;
+          height: 260px;
+        }
+      }
+    }
+
+    &__right-container,
+    &__left {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    &__right {
+
+      &-title,
+      &-text {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+  }
+}

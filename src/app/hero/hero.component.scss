@@ -1,0 +1,85 @@
+@import "../../styles.scss";
+
+.hero {
+  width: 100%;
+  height: 720px;
+
+  position: relative;
+
+  &__image {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: -32px;
+
+    &-container {
+      position: relative;
+      height: 100%;
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+    }
+
+    &-overlay {
+      width: calc(100% - 300px);
+      overflow: hidden;
+      position: absolute;
+      bottom: -100px;
+      right: 0;
+      z-index: -1;
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @include when-less("xxl") {
+    height: 700px;
+
+    &__image-overlay {
+      // transform: scale(0.8);
+      // transform-origin: right;
+      bottom: -50px;
+    }
+  }
+
+  @include when-less("xl") {
+    height: 500px;
+
+    &__image-overlay {
+      bottom: -50px;
+      width: 100%;
+    }
+  }
+
+  @include when-less("md") {
+    height: 400px;
+
+    &__image-overlay {
+      bottom: -50px;
+    }
+  }
+
+  @include when-less("sm") {
+    &__image-overlay {
+      width: 100%;
+      transform: scale(1.7);
+      transform-origin: right;
+      bottom: 20px;
+
+      img {
+        width: 100%;
+        transform: translateX(200px);
+      }
+    }
+  }
+}

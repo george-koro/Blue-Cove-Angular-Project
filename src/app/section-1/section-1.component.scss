@@ -1,0 +1,228 @@
+@import "../../styles.scss";
+
+.arrival {
+  &__title {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    padding-bottom: 70px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &-title {
+      @include font-weight-semibold;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $dark;
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      ul {
+        padding-left: 30px;
+
+        li {
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &-note {
+      margin-top: 25px;
+      @include font-size-17;
+    }
+  }
+
+  @include when-less("lg") {
+    &__title {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      padding-bottom: 60px;
+    }
+  }
+}
+
+.hotels-1 {
+  &__container {
+    display: flex;
+    padding-bottom: 30px;
+  }
+
+  &__title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-transform: none;
+  }
+
+  &__swiper {
+    max-width: 660px;
+    width: 100%;
+    max-height: 750px;
+
+    overflow: hidden;
+
+    img {
+      display: block;
+    }
+
+    position: relative;
+
+    .swiper {
+      width: 100%;
+      cursor: grab;
+      overflow: hidden;
+    }
+
+
+    .swiper-pagination {
+
+      padding-top: 40px;
+      position: static;
+      width: 100%;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .swiper-pagination-bullet {
+
+      opacity: 1;
+      transition: $trans;
+      border-radius: 20px;
+      height: 5px;
+      width: 25px;
+      background-color: #d9d9d9;
+      margin: 0px 5px;
+
+      &-active {
+        width: 50px;
+      }
+    }
+
+
+  }
+
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-list {
+      padding-left: 170px;
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-title {
+      @include font-weight-semibold;
+      color: $dark-2;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      a {
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: 30px;
+
+        li {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  @include when-less("xxl") {
+    &__information-list {
+      padding-left: 90px;
+
+      li {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @include when-less("lg") {
+    &__title {
+      // margin: 40px 0 20px;
+    }
+
+    &__information-list {
+      padding-left: 50px;
+    }
+  }
+
+  @include when-less("md") {
+    &__title {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &__container {
+      flex-direction: column;
+      padding-bottom: 0;
+    }
+
+    .container-a {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__swiper {
+      max-width: 100%;
+      height: unset;
+      max-height: unset;
+      margin-bottom: 50px;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        // height: 600px;
+      }
+
+      .swiper-pagination {
+        padding-top: 5px;
+        height: 10px;
+      }
+    }
+
+    &__information-list {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  @include when-less("sm") {
+    &__swiper {
+      img {
+        height: 440px;
+      }
+    }
+  }
+}

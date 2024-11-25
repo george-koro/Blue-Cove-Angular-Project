@@ -1,0 +1,72 @@
+@import "../../styles.scss";
+
+.header {
+  position: sticky;
+  top: 50px;
+  z-index: 11000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: $trans;
+
+  &.active {
+    top: 23px;
+
+    .header__logo {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &.open {
+    .header__burger {
+      display: none;
+    }
+
+    .header__close {
+      display: block;
+    }
+  }
+
+  &__logo {
+    transition: $trans;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__burger {
+    position: relative;
+    z-index: 11000;
+    align-self: flex-start;
+    display: none;
+    cursor: pointer;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    position: relative;
+    z-index: 11000;
+    align-self: flex-start;
+    display: none;
+
+    img {
+      display: block;
+    }
+  }
+
+  @include when-less("xl") {
+    padding: 0 25px;
+    justify-content: space-between;
+
+    &__burger {
+      display: block;
+    }
+  }
+}

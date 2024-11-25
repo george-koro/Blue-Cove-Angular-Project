@@ -1,0 +1,110 @@
+@import "../../styles.scss";
+
+.tours-2 {
+  &__title {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin-bottom: 60px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__image {
+    max-width: 760px;
+    width: 100%;
+  }
+
+  &__information {
+    padding-left: 40px;
+    width: 100%;
+    padding-right: 20px;
+
+    &-list {
+      list-style: none;
+
+      li {
+        margin-bottom: 40px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &-title {
+        @include font-weight-semibold;
+        color: #8b8b8b;
+        margin-bottom: 10px;
+      }
+
+      &-text {
+        a {
+          text-decoration: none;
+        }
+
+        ul {
+          list-style: disc;
+          padding-left: 30px;
+
+          li {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  @include when-less("lg") {
+    .container-a {
+      padding: 0;
+    }
+
+    &__title {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    &__text {
+      padding-left: 60px;
+      padding-right: 60px;
+      margin-bottom: 30px;
+    }
+
+    &__container {
+      flex-direction: column;
+    }
+
+    &__image {
+      max-width: unset;
+      margin-bottom: 30px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 400px;
+      }
+    }
+
+    &__information {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
+
+  @include when-less("md") {
+
+    &__title,
+    &__text,
+    &__information {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+}
