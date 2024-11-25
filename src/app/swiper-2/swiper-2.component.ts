@@ -20,13 +20,13 @@ import { SwiperOptions } from 'swiper/types';
       <img
         class="swiper-button-next"
         (click)="onNext()"
-        src="./assets/images/Vector1.png"
+        src="assets/images/Vector1.png"
         alt=""
       />
       <img
         class="swiper-button-prev"
         (click)="onPrev()"
-        src="./assets/images/Vector2.png"
+        src="assets/images/Vector2.png"
         alt=""
       />
     </div>
@@ -49,19 +49,19 @@ export class Swiper2Component {
   sectionOption: string[] = ['leisure', 'hotels-2', 'tours-3'];
 
   contentsLeisure: string[] = [
-    './assets/images/leisure1.png',
-    './assets/images/leisure1.png',
-    './assets/images/leisure1.png',
+    'assets/images/leisure1.png',
+    'assets/images/leisure1.png',
+    'assets/images/leisure1.png',
   ];
   contentsHotels: string[] = [
-    './assets/images/hotel21.png',
-    './assets/images/hotel21.png',
-    './assets/images/hotel21.png',
+    'assets/images/hotel21.png',
+    'assets/images/hotel21.png',
+    'assets/images/hotel21.png',
   ];
   contentsTours: string[] = [
-    './assets/images/toursslider.png',
-    './assets/images/toursslider.png',
-    './assets/images/toursslider.png',
+    'assets/images/toursslider.png',
+    'assets/images/toursslider.png',
+    'assets/images/toursslider.png',
   ];
 
   contents: string[] = [];

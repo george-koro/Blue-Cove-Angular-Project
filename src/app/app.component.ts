@@ -47,12 +47,13 @@ import { DOCUMENT } from '@angular/common';
 })
 export class AppComponent {
   title = 'Blue Cove Angular ';
-
+  window: any;
   constructor(
     private elem: ElementRef,
     @Inject(DOCUMENT) private document: Document
   ) {
     gsap.registerPlugin(ScrollTrigger);
+    this.window = this.document.defaultView;
   }
 
   public sidebar: any;
@@ -84,73 +85,73 @@ export class AppComponent {
     const close = this.elem.nativeElement.querySelector('.header__close');
     const menu = this.elem.nativeElement.querySelector('.sidebar');
     const logo = this.elem.nativeElement.querySelector('.header');
-    let listItems = this.elem.nativeElement.querySelectorAll(
-      '.sidebar__inner ul li a'
-    );
+
     let logostate = false;
 
-    if (window.scrollY != 0) {
+    if (this.window.scrollY != 0) {
       logo.classList.add('active');
     } else {
       logo.classList.remove('active');
     }
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY != 0) {
-        logo.classList.add('active');
-      } else {
-        logo.classList.remove('active');
-      }
-    });
-
-    const tl = gsap.timeline({
-      paused: true,
-      defaults: {
-        ease: Power3.easeOut,
-      },
-      onStart: () => {
-        document.body.classList.add('hide-overflow');
-        logo.classList.add('open');
-        if (logo.classList.contains('active')) {
-          logostate = true;
-        }
-        logo.classList.add('active');
-      },
-
-      onReverseComplete: () => {
-        document.body.classList.remove('hide-overflow');
-        logo.classList.remove('open');
-        if (!logostate) {
+    this.window.addEventListener('load', (event: any) => {
+      this.window.addEventListener('scroll', () => {
+        if (this.window.scrollY != 0) {
+          logo.classList.add('active');
+        } else {
           logo.classList.remove('active');
         }
-        logostate = false;
-      },
-    });
+      });
 
-    tl.to('.sidebar', {
-      yPercent: 150,
-      duration: 1.2,
-    });
+      const tl = gsap.timeline({
+        paused: true,
+        defaults: {
+          ease: Power3.easeOut,
+        },
+        onStart: () => {
+          this.document.body.classList.add('hide-overflow');
+          logo.classList.add('open');
+          if (logo.classList.contains('active')) {
+            logostate = true;
+          }
+          logo.classList.add('active');
+        },
 
-    burger.addEventListener('click', () => {
-      tl.play();
-    });
-    close.addEventListener('click', () => {
-      tl.reverse();
-    });
+        onReverseComplete: () => {
+          this.document.body.classList.remove('hide-overflow');
+          logo.classList.remove('open');
+          if (!logostate) {
+            logo.classList.remove('active');
+          }
+          logostate = false;
+        },
+      });
 
-    listItems.forEach((item: any) => {
-      item.addEventListener('click', function () {
-        logostate = true;
-        if (window.innerWidth < 1200) {
-          tl.reverse();
-        }
+      tl.to('.sidebar', {
+        yPercent: 150,
+        duration: 1.2,
+      });
+
+      burger.addEventListener('click', () => {
+        tl.play();
+      });
+      close.addEventListener('click', () => {
+        tl.reverse();
+      });
+
+      this.fillList(this.days);
+
+      let listItems = this.elem.nativeElement.querySelectorAll(
+        '.sidebar__inner ul li a'
+      );
+      listItems.forEach((item: any) => {
+        item.addEventListener('click', function () {
+          logostate = true;
+          if (window.innerWidth < 1200) {
+            tl.reverse();
+          }
+        });
       });
     });
-
-    setTimeout(() => {
-      this.fillList(this.days);
-    }, 0);
   }
 
   createSections(sections: any, target: any = ''): void {
